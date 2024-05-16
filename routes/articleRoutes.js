@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const authentication = require("../middleware/authentication");
 
-const { createTweet } = require("../controllers/tweet");
+const { createArticle } = require("../controllers/article");
 
-router.post("/create", authentication, createTweet);
+router.post("/create", authentication, createArticle);
 
 module.exports = router;

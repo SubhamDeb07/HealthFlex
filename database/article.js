@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const TweetSchema = new mongoose.Schema(
+const ArticleSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -17,6 +17,6 @@ const TweetSchema = new mongoose.Schema(
   }
 );
 
-TweetSchema.index({ text: "text" });
+ArticleSchema.index({ text: "text" });
 
-module.exports = mongoose.model("Tweet", TweetSchema);
+module.exports = mongoose.model("Article", ArticleSchema);

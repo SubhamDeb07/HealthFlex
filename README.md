@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is designed to Create users and the users can also tweet.
+This project is designed to Create users and the users can also articles.
 
 ## Installation
 
@@ -46,10 +46,7 @@ The project depends on the following packages:
 A new user can be creataed by sending a POST request to this endpoint with the following body:
 
 ```json
-{
-  "userName": "",
-  "password": ""
-}
+{ "email": "", "userName": "", "password": "" }
 ```
 
 #### POST /user/login
@@ -58,23 +55,23 @@ A registered user can login by passing the details in the body:
 
 ```json
 {
-  "userName": "",
+  "email": "",
   "password": ""
 }
 ```
 
-#### GET /user/:id/timeline
+#### GET /user/:id/retrieveArticles
 
-All the registered tweets of the person will be found here in this api:
+All the registered articles of the person will be found here in this api:
 
 ```
 In :id you have to pass the id of the registed user
 
 ```
 
-#### POST /tweet/create
+#### POST /article/create
 
-The registed user can write tweets by sending a POST request to this endpoint with the following body:
+The registed user can write articles by sending a POST request to this endpoint with the following body:
 
 ```json
 {

@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
-const tweetRoutes = require("./routes/tweetRoutes");
+const articleRoutes = require("./routes/articleRoutes");
 const authenticateUser = require("./middleware/authenticateUser");
 
 const app = express();
@@ -20,7 +20,7 @@ mongoose
 
 app.use("/user", userRoutes);
 
-app.use("/tweet", authenticateUser, tweetRoutes);
+app.use("/article", authenticateUser, articleRoutes);
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,20 +1,20 @@
 const User = require("../database/user");
-const Tweet = require("../database/tweet");
+const Article = require("../database/article");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-exports.createTweet = async (req, res) => {
+exports.createArticle = async (req, res) => {
   const { text } = req.body;
 
   try {
-    const newTweet = await Tweet.create({
+    const newArticle = await Article.create({
       userId: req.user.id,
       text,
     });
     res.status(201).json({
-      message: "Tweet created successfully",
-      tweet: newTweet,
+      message: "Article created successfully",
+      article: newArticle,
     });
   } catch (error) {
     res.status(500).json({
